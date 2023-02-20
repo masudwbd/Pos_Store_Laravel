@@ -11,6 +11,11 @@ use File;
 
 class SettingsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $data = DB::table('settings')->first();
         return view('admin.settings.index', compact('data'));

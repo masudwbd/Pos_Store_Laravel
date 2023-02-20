@@ -9,6 +9,11 @@ use Toastr;
 use DataTables;
 class AdvanceSalaryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request){
         if($request->ajax()){
             $data = DB::table('advance_salaries')->get();

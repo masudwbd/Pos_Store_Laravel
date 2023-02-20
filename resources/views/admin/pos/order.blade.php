@@ -36,6 +36,9 @@
                                 <th>{{$item->qty * $item->price}}</th>
                             </tr>
                         @endforeach
+                        <tr>
+                            <td >Total : {{cart::total()}}</td>
+                        </tr>
                         </tbody>
                       </table>
                       <div class="float-right">
@@ -68,17 +71,17 @@
                         <div class="form-group">
                             <label for="">Paid Amount</label>
                             <select class="form-control" name="payment_status" id="">
-                                <option value="1">Cash</option>
-                                <option value="1">Card</option>
-                                <option value="1">Due</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Card">Card</option>
+                                <option value="Due">Due</option>
                             </select>
                         </div>
 
                     </div>
                     <div class="col-4">
                         <div class="form-group">
-                            <label for="">Paid Amount</label>
-                            <input class="form-control" type="number" name="pay" id="">
+                            <label for="">Pay Amount</label>
+                            <input class="form-control" value="{{cart::total()}}" name="pay" id="">
                         </div>
                     </div>
                     <div class="col-4">

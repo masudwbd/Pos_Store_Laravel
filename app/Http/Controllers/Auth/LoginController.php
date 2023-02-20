@@ -45,7 +45,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
         if(auth()->attempt(array('email' => $request->email, 'password' => $request->password))){
-            return redirect()->route('layouts.app');
+            return redirect()->route('dashboard.index');
         }else{
             return redirect()->back()->with("Invalid Email Or Password");
         }

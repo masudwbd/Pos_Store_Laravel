@@ -9,6 +9,11 @@ use Toastr;
 use DataTables;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function add_new(){
         return view('admin.categories.add_new');
     }

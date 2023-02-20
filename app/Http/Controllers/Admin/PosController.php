@@ -10,6 +10,11 @@ use Cart;
 use Toastr;
 class PosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request){
         $products = DB::table('products')
         ->leftJoin('categories', 'products.category_id', 'categories.id')
@@ -89,6 +94,6 @@ class PosController extends Controller
         DB::table('order_details')->insert($o_data);
         Cart::destroy();
         Toastr::success('Order Added!', 'Title', ["positionClass" => "toast-top-right"]);
-        return redirect()->to('admin.pos.index');
+        return redirect()->to('pos/');
      }
 }

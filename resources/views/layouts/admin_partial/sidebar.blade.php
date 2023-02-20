@@ -28,10 +28,18 @@
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
       <li class="nav-item">
-        <a href="{{route('pos.index')}}" class="nav-link">
+        <a href="{{route('dashboard.index')}}" class="nav-link">
           <i class="nav-icon fas fa-copy text-light" ></i>
           <p class="text-light"> 
             Dashboard
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{route('pos.index')}}" class="nav-link">
+          <i class="nav-icon fas fa-copy text-light" ></i>
+          <p class="text-light"> 
+            Pos
           </p>
         </a>
       </li>
@@ -186,10 +194,30 @@
         </ul>
       </li>
       <li class="nav-item">
+        <a href="{{route('orders.index')}}" class="nav-link">
+          <i class="nav-icon fas fa-copy text-light" ></i>
+          <p class="text-light"> 
+            Orders
+            <i class="fas fa-angle-left right"></i>
+            <span class="badge badge-info right">6</span>
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
         <a href="{{route('settings.index')}}" class="nav-link">
           <i class="nav-icon fas fa-copy text-light" ></i>
           <p class="text-light"> 
             Settings
+            <i class="fas fa-angle-left right"></i>
+            <span class="badge badge-info right">6</span>
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{route('admin.logout')}}" class="nav-link">
+          <i class="nav-icon fas fa-copy text-light" ></i>
+          <p class="text-light"> 
+            Logout
             <i class="fas fa-angle-left right"></i>
             <span class="badge badge-info right">6</span>
           </p>

@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\EmployeController;
 use App\Http\Controllers\Admin\AdvanceSalaryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PosController;
 use App\Http\Controllers\Admin\PresentController;
 use App\Http\Controllers\Admin\ProductController;
@@ -111,5 +114,17 @@ Route::group(['prefix' => 'pos'], function () {
     Route::post('/cart-delete/{id}' , [PosController::class ,  'delete_cart'])->name('cart.delete');
     Route::post('/create-invoice' , [PosController::class ,  'create_invoice'])->name('create.invoice');
     Route::post('/order-store' , [PosController::class ,  'order_store'])->name('order.store');
+});
+
+Route::group(['prefix' => 'orders'], function () { 
+    Route::get('/' , [OrderController::class ,  'index'])->name('orders.index');
+});
+
+Route::group(['prefix' => 'dashboard'], function () { 
+    Route::get('/' , [DashboardController::class ,  'index'])->name('dashboard.index');
+});
+
+Route::group(['prefix' => 'admin'], function () { 
+    Route::get('/' , [AdminController::class ,  'logout'])->name('admin.logout');
 });
 

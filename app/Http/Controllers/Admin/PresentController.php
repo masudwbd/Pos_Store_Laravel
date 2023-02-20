@@ -11,6 +11,11 @@ use Toastr;
 use DataTables;
 class PresentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request){
         if($request->ajax()){
             $employers = DB::table('presents')->select('edit_date')->groupBy('edit_date')->get();
